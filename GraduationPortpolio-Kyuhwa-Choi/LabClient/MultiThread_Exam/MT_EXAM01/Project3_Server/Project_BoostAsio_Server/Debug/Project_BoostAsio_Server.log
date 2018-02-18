@@ -1,0 +1,8 @@
+﻿  sproj01.cpp
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0501 to the compiler command line; or
+  - add _WIN32_WINNT=0x0501 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0501 (i.e. Windows XP target).
+c:\users\choikyuhwa\desktop\새 폴더\labclient\multithread_exam\mt_exam01\project3_server\project_boostasio_server\sproj01.cpp(13): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\time.h(475): note: 'ctime' 선언을 참조하십시오.
+  Project_BoostAsio_Server.vcxproj -> C:\Users\choikyuhwa\Desktop\새 폴더\LabClient\MultiThread_Exam\MT_EXAM01\Project3_Server\Project_BoostAsio_Server\Debug\Project_BoostAsio_Server.exe

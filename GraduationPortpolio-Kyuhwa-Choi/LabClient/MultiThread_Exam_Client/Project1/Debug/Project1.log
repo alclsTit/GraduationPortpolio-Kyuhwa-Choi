@@ -1,0 +1,6 @@
+﻿  proj_client01.cpp
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0501 to the compiler command line; or
+  - add _WIN32_WINNT=0x0501 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0501 (i.e. Windows XP target).
+  Project1.vcxproj -> C:\Users\choikyuhwa\Desktop\새 폴더\LabClient\MultiThread_Exam_Client\Project1\Debug\Project1.exe

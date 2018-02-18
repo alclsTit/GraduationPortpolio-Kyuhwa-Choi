@@ -1,0 +1,6 @@
+*.idb
+*.pch
+*.obj
+*.exe
+.vs/
+

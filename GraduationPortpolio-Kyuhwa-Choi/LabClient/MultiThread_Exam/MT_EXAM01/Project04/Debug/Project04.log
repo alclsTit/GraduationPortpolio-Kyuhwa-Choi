@@ -1,0 +1,14 @@
+﻿  pro04_tcpip_echo.cpp
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0501 to the compiler command line; or
+  - add _WIN32_WINNT=0x0501 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0501 (i.e. Windows XP target).
+  ChattingServer.cpp
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0501 to the compiler command line; or
+  - add _WIN32_WINNT=0x0501 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0501 (i.e. Windows XP target).
+c:\users\choikyuhwa\desktop\새 폴더\labclient\multithread_exam\mt_exam01\project04\chattingserver.h(11): error C2512: 'boost::asio::basic_socket_acceptor<boost::asio::ip::tcp>': 사용할 수 있는 적절한 기본 생성자가 없습니다.
+  c:\users\choikyuhwa\desktop\새 폴더\boost_1_66_0\boost\asio\ip\tcp.hpp(86): note: 'boost::asio::basic_socket_acceptor<boost::asio::ip::tcp>' 선언을 참조하십시오.
+c:\users\choikyuhwa\desktop\새 폴더\labclient\multithread_exam\mt_exam01\project04\chattingserver.cpp(7): error C2512: 'Session::Session': 사용할 수 있는 적절한 기본 생성자가 없습니다.
+  코드를 생성하고 있습니다...
