@@ -50,6 +50,7 @@ public:
 	Player_Data* GetPlayerData() { return &m_PlayerData; }
 
 	void SendPacket(Packet *packet);
+	void Processing(Packet *packet);
 
 	bool SetCharHp(int hp) { m_PlayerData.UserInfo.cur_hp = hp; return true; }
 	int GetCharHp() const { return m_PlayerData.UserInfo.cur_hp; }

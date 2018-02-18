@@ -85,18 +85,69 @@ void Player_Session::m_RecvPacket()
 
 			//연결이 끊긴 플레이어를 몬스터들의 시야에서 없애버림
 		}
-		else
+		
+		int curr_data_processing = bytes_transferred;
+		Packet *recvBuf = m_RecvBuf;
+		while (curr_data_processing > 0)
 		{
-			int curr_data_size = bytes_transferred;
-			Packet *recvBuf = m_RecvBuf;
-			while (curr_data_size > 0)
+			if (m_curr_packet_size == 0)
 			{
-				if (m_curr_packet_size == 0)
-				{
+				m_curr_packet_size = recvBuf[0];
+				//if ()
+			}
 
-				}
+			auto left = m_curr_packet_size - m_prev_packet_size;
+			if (left <= curr_data_processing)
+			{
+				memcpy(m_DataBuf + m_prev_packet_size, recvBuf, left);
+
+				Processing(m_DataBuf);
+
+				m_curr_packet_size = 0;
+				m_prev_packet_size = 0;
+				curr_data_processing -= left;
+				recvBuf += left;
+			}
+			else
+			{
+				memcpy(m_DataBuf + m_prev_packet_size, recvBuf, curr_data_processing);
+				m_prev_packet_size += curr_data_processing;
+				curr_data_processing = 0;
+				recvBuf += curr_data_processing;
 			}
 		}
+		
+		m_RecvPacket();
+	});
+}
+
+void Player_Session::Processing(Packet * packet)
+{
+	// 패킷 0 - 패킷 사이즈
+	// 패킷의 1번째 - 속성에 따라서 처리
+	switch (packet[1])
+	{
+	case CHANGED_PLAYER_POSITION: {
+		if (m_CurState == DEAD) break;
+		else m_CurState = MOVE;
+
+		m_PlayerData.Pos = *(reinterpret_cast<Position*>(&packet[2]));
+
+		STC_ChangedPos changedPos;
+		changedPos.id = m_ID;
+		changedPos.pos = m_PlayerData.Pos;
+		
+		break;
+	}
+	case CHANGED_PLAYER_DIRECTION: {
+		if (m_CurState == DEAD) break;
+		
+		m_PlayerData.dir = 
+
+
+		break;
+	}
+
 	}
 }
 

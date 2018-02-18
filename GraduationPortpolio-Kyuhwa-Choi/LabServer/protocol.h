@@ -87,6 +87,7 @@ struct Player_Data
 	unsigned int	ID{ 0 };
 	Position		Pos;
 	Player_Info		UserInfo;
+	char			Dir
 
 };
 
@@ -114,3 +115,12 @@ typedef struct Server_To_Client_Player_Disconnected_Info
 	unsigned int id;
 
 }STC_Disconnected;
+
+
+typedef struct Server_To_Client_Player_Position_Changed
+{
+	unsigned char packet_size = sizeof(unsigned int) + sizeof(Position) + 2 * sizeof(unsigned char);
+	unsigned char pack_type = PACKET_PROTOCOL_TYPE::CHANGED_PLAYER_POSITION;
+	unsigned int id;
+	Position pos;
+}STC_ChangedPos;
